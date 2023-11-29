@@ -1,4 +1,7 @@
 #include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
+
 
 /**
  * insert_node - Adds a new node to listint linked list

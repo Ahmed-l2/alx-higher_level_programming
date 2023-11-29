@@ -4,4 +4,4 @@ for num in range(25, -1, -1):
         c = num + ord('a')
     else:
         c = num + ord('A')
-    print(chr(c), end="")
+    print("{}".format(chr(c)), end="")

@@ -7,4 +7,3 @@ def remove_char_at(str, n):
         else:
             print(char, end="")
         num += 1
-    print("\n", end="")

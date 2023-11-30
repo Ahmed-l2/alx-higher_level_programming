@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import sys
+    from sys import argv
     count = 1
-    if len(sys.argv) > 1:
-        if len(sys.argv) == 2:
-            print("1 arugment:")
-        else:
-            print("{} arguments:".format(len(sys.argv) - 1))
-        for word in sys.argv[1:]:
+    if len(argv) == 2:
+        print("{} argument:".format(len(argv) - 1))
+        print("{}: {}".format(count, argv[1]))
+    elif len(argv) > 1:
+        print("{} arguments:".format(len(argv) - 1))
+        for word in argv[1:]:
             print("{}: {}".format(count, word))
             count += 1
     else:

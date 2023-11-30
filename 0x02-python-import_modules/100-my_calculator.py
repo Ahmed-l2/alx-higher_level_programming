@@ -9,11 +9,11 @@ if __name__ == "__main__":
         if argv[2] == "+":
             print("{} + {} = {}".format(a, b, a + b))
         elif argv[2] == "-":
-            print("{} + {} = {}".format(a, b, a - b))
+            print("{} - {} = {}".format(a, b, a - b))
         elif argv[2] == "*":
-            print("{} + {} = {}".format(a, b, a * b))
+            print("{} * {} = {}".format(a, b, a * b))
         elif argv[2] == "/":
-            print("{} + {} = {}".format(a, b, a / b))
+            print("{} / {} = {}".format(a, b, a / b))
         else:
             print("Unknown operator. Available operators: +, -, * and /")
             exit(1)

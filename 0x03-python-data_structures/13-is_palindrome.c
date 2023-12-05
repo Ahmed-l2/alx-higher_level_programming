@@ -4,13 +4,18 @@
 
 int is_palindrome(listint_t **head)
 {
-	struct listint_t *fast = head;
-	struct listint_t *slow = slow;
-	struct listint_t *prev = NULL;
-	struct listint_t *next = NULL;
-	struct listint_t *current = NULL;
-	struct listint_t *firsthalf = head;
-	struct listint_t *secondhalf = NULL;
+	listint_t *fast = *head;
+	listint_t *slow = *head;
+	listint_t *prev = NULL;
+	listint_t *next = NULL;
+	listint_t *current = NULL;
+	listint_t *firsthalf = *head;
+	listint_t *secondhalf = NULL;
+
+	if(*head == NULL || (*head)->next == NULL)
+	{
+		return (1);
+	}
 
 	while (fast != NULL && fast->next != NULL)
 	{
@@ -32,7 +37,7 @@ int is_palindrome(listint_t **head)
 
 	while (secondhalf != NULL)
 	{
-		if (firsthalf->data != secondhalf->data)
+		if (firsthalf->n != secondhalf->n)
 		{
 			return (0);
 		}

@@ -3,4 +3,7 @@ def uniq_add(my_list=[]):
     if not my_list:
         return None
     new_list = set(my_list)
-    result = reduce(lambda x, y: x + y, new_list)
+    result = 0
+    for num in new_list:
+        result += num
+    return result

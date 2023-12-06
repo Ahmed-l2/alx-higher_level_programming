@@ -1,4 +1,4 @@
-#!/usr/bin/pyhthon3
+#!/usr/bin/pythhon3
 def uniq_add(my_list=[]):
     if not my_list:
         return None

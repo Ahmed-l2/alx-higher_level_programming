@@ -1,10 +1,8 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if type(roman_string) != str and not roman_string:
+    if roman_string is not str and not roman_string:
         return None
-    rom_num = {
-    'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000
-    }
+    rom_num = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     value = 0
     pvalue = 0
     total = 0
@@ -14,3 +12,4 @@ def roman_to_int(roman_string):
             total = total - 2 * pvalue
         total = total + value
         pvalue = value
+    return total

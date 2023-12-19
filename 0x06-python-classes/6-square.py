@@ -13,8 +13,8 @@ class Square:
             position: Position attribute of the square.
         """
 
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         """Calculate and return the area of the square.
@@ -23,7 +23,7 @@ class Square:
             int: The area of the square, computed as the square of the side
             length.
         """
-        return self.size ** 2
+        return self.__size ** 2
 
     @property
     def size(self):

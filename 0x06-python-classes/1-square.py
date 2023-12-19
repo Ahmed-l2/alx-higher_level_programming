@@ -11,9 +11,4 @@ class Square:
         Args:
             size: Size atribute of the square.
         """
-        try:
-            self.__size = size
-             if self.__size < 0:
-                raise ValueError("size must be >= 0")
-        except TypeError:
-            print("size must be an integer")
+        self.__size = size

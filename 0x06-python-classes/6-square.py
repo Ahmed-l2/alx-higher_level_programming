@@ -60,15 +60,15 @@ class Square:
         if self.__size == 0:
             print("")
             return
-        else:
-            for i in range(self.__position[1]):
-                print("")
-            for y in range(0, self.__size):
-                for j in range(self.__position[0]):
-                    print(" ", end='')
-                for k in range(0, self.__size):
-                    print("#", end='')
-                print("")
+
+        for i in range(self.__position[1]):
+            print("")
+        for y in range(0, self.__size):
+            for j in range(self.__position[0]):
+                print(" ", end='')
+            for k in range(0, self.__size):
+                print("#", end='')
+            print("")
 
     @property
     def position(self):

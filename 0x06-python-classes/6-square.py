@@ -13,8 +13,8 @@ class Square:
             position: Position attribute of the square.
         """
 
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     def area(self):
         """Calculate and return the area of the square.
@@ -58,7 +58,7 @@ class Square:
         Position should be used by adding spaces (indentation).
         """
         if self.__size == 0:
-            print()
+            print("")
         else:
             for i in range(self.__position[1]):
                 print("")
@@ -67,7 +67,7 @@ class Square:
                     print(" ", end='')
                 for k in range(0, self.__size):
                     print("#", end='')
-                print()
+                print("")
 
     @property
     def position(self):

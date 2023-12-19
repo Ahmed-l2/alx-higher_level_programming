@@ -23,7 +23,7 @@ class Square:
             int: The area of the square, computed as the square of the side
             length.
         """
-        return self.__size ** 2
+        return (self.__size ** 2)
 
     @property
     def size(self):
@@ -32,7 +32,7 @@ class Square:
         Returns:
             int: The size of the square.
         """
-        return self.__size
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -59,6 +59,7 @@ class Square:
         """
         if self.__size == 0:
             print("")
+            return
         else:
             for i in range(self.__position[1]):
                 print("")
@@ -76,7 +77,7 @@ class Square:
         Returns:
             Tuple: the position of the square.
         """
-        return self.__position
+        return (self.__position)
 
     @size.setter
     def position(self, value):

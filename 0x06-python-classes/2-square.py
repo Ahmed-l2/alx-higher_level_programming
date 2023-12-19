@@ -10,6 +10,10 @@ class Square:
 
         Args:
             size: Size atribute of the square.
+
+        Raises:
+            TypeError: If size is not an int
+            ValueError: If size is less than 0
         """
         try:
             self.__size = size

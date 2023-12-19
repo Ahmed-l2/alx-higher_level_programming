@@ -8,5 +8,5 @@ class Square:
         """
         Args:
             size: Size atribute of the square
-            """
+        """
         self._size = size

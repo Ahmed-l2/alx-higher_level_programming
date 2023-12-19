@@ -23,7 +23,7 @@ class Square:
             int: The area of the square, computed as the square of the side
             length.
         """
-        return (self.__size ** 2)
+        return (self.__size * self.__size)
 
     @property
     def size(self):

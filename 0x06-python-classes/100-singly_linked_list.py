@@ -18,7 +18,10 @@ class Node:
 
     @property
     def data(self):
-        """int: Retrieve the data of the node."""
+        """Retrieves the data from node
+
+        Returns: returns the data from the node
+        """
         return self.__data
 
     @data.setter
@@ -37,7 +40,10 @@ class Node:
 
     @property
     def next_node(self):
-        """Node or None: Retrieve the next node in the list."""
+        """Node or None: Retrieve the next node in the list.
+
+        Returns: the next node
+        """
         return self.__next_node
 
     @next_node.setter

@@ -98,11 +98,8 @@ class Square:
 
     def __str__(self):
         """Replicates the print() function of a Square"""
-        if self.__size == 0:
-            print("")
-            return
-
-        for i in range(self.__position[1]):
+        if self.__size != 0:
+            for i in range(self.__position[1]):
             print("")
         for y in range(0, self.__size):
             for j in range(self.__position[0]):

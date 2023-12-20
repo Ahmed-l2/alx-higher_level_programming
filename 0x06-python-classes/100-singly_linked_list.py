@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Singly linked list module"""
 
+
 class Node:
     def __init__(self, data, next_node=None):
         """Constructor.
@@ -60,6 +61,10 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
+
+"""Singly Linked List Moduble"""
+
+
 class SinglyLinkedList:
     def __init__(self):
         """Constructor for SinglyLinkedList."""
@@ -98,4 +103,3 @@ class SinglyLinkedList:
             result.append(str(current.data))
             current = current.next_node
         return '\n'.join(result)
-

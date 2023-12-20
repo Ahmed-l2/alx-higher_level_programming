@@ -3,6 +3,8 @@
 
 
 class Node:
+    """A node for a singly linked list"""
+
     def __init__(self, data, next_node=None):
         """Constructor.
 
@@ -62,10 +64,9 @@ class Node:
         self.__next_node = value
 
 
-"""Singly Linked List Moduble"""
-
-
 class SinglyLinkedList:
+    """Singly Linked List Moduble"""
+
     def __init__(self):
         """Constructor for SinglyLinkedList."""
         self.__head = None

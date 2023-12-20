@@ -106,6 +106,6 @@ class Square:
                 print(" ", end='')
             for k in range(0, self.__size):
                 print("#", end='')
-            if i != self.__size - 1:
+            if y != self.__size - 1:
                 print("")
         return ("")

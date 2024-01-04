@@ -1,0 +1,85 @@
+The ``0-add_integer`` test module
+**********************************
+
+import the function from module:
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Test single integer argument:
+
+	>>> add_integer(3)
+	101
+
+Test with zero to check default:
+
+	>>> add_integer(0)
+	98
+
+Test single float value:
+
+	>>> add_integer(543.2)
+	641
+
+Test single negative float value:
+
+	>>> add_integer(-23.8)
+	75
+
+Test two integers values:
+
+	>>> add_integer(31, 3)
+	34
+
+Test two big integer values:
+
+	>>> add_integer(289374982374, 328477298344)
+	617852280718
+
+Test positive and negative integer values:
+
+	>>> add_integer(348374, -45657)
+	302717
+
+Test negative and positive integer values:
+
+	>>> add_integer(-348374, 45657)
+	-302717
+
+Test integer and float values:
+
+	>>> add_integer(323, 14.3)
+	337
+
+Test float and integer values:
+
+	>>> add_integer(14.3, 323)
+	337
+
+Test two float values:
+
+	>>> add_integer(5.7, 29.4)
+	34
+
+Test with string value:
+
+	>>> add_integer("hello")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+Test b as string value:
+
+	>>> add_integer(34, "hello")
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+Test boundary values:
+
+	>>> add_integer(2**31 - 1, 1)
+	2147483648
+
+Test performance:
+
+	>>> add_integer(10**6, 10**6)
+	2000000

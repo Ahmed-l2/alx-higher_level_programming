@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/user/bin/python3
 """LockedClass with no class or object attribute."""
 
 

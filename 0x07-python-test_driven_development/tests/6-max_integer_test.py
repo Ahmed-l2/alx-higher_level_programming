@@ -35,5 +35,6 @@ class TestMaxIntegerFunction(unittest.TestCase):
         """Test with a list of float numbers."""
         self.assertEqual(max_integer([2.5, 5.7, 1.1, 3.2]), 5.7)
 
+
 if __name__ == '__main__':
     unittest.main()

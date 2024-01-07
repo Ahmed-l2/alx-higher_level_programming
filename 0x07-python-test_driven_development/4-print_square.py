@@ -3,6 +3,20 @@
 
 
 def print_square(size):
+    """Module for printing a square of a given size.
+
+    This module provides a function, print_square, which takes an integer
+    (size) as a parameter and prints a square of '#' characters with the
+    specified size.
+
+    Args:
+        size (int): The size of the square. Must be a non-negative integer.
+
+    Raises:
+        TypeError: If the size is not an integer.
+        ValueError: If the size is a negative integer.
+        TypeError: If the size is a float.
+    """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
     if size < 0:
@@ -14,6 +28,7 @@ def print_square(size):
         for row in range(size):
             print('#', end="")
         print("")
+
 
 if __name__ == "__main__":
     import doctest

@@ -1,0 +1,44 @@
+# Import the function
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test Basic:
+
+    >>> matrix_divided([[1, 2], [3, 4]], 2)
+    [[0.5, 1.0], [1.5, 2.0]]
+
+Test Divide by Zero:
+    >>> matrix_divided([[1, 2], [3, 4]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Test Invalid Divisor:
+    >>> matrix_divided([[1, 2], [3, 4]], 'string')
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+Test Invalid Matrix:
+    >>> matrix_divided([[1, 2], ['three', 4]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test Different Row Sizes:
+    >>> matrix_divided([[1, 2], [3, 4, 5]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Test Large Numbers:
+    >>> matrix_divided([[10**6, 10**6], [10**6, 10**6]], 2)
+    [[500000.0, 500000.0], [500000.0, 500000.0]]
+
+Test Floating-Point Result:
+    >>> matrix_divided([[1, 2], [3, 4]], 3)
+    [[0.33, 0.67], [1.0, 1.33]]
+
+Test Round to 2 Decimal Places:
+    >>> matrix_divided([[1, 2], [3, 4]], 3)
+    [[0.33, 0.67], [1.0, 1.33]]
+

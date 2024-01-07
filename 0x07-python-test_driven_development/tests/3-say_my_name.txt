@@ -1,0 +1,36 @@
+# Import the function
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test with both names provided:
+
+	>>> say_my_name("John", "Doe")
+	My name is John Doe
+
+Test with only the first name provided:
+
+	>>> say_my_name("Alice")
+	My name is Alice 
+
+Test with an empty string for the last name:
+
+	>>> say_my_name("Bob", "")
+	My name is Bob 
+
+:Test with both names as empty strings
+
+	>>> say_my_name("", "")
+	My name is  
+
+Test with an integer as the first name:
+
+	>>> say_my_name(123, "Smith")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+Test with a list as the last name:
+
+	>>> say_my_name("Jane", [1, 2, 3])
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string

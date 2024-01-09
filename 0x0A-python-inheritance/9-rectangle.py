@@ -24,4 +24,5 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """String representation method"""
-        return ("[Rectangle] {}/{}".format(str(self.__width), str(self.__height)))
+        return ("[Rectangle] {}/{}".format(str(self.__width),
+                str(self.__height)))

@@ -24,7 +24,12 @@ class BaseGeometry:
             TypeError: if value is not an integer
             ValueError: if value is less or equal to 0
         """
-        if not isinstance(value, int):
-            raise TypeError("<name> must be an integer")
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
         if value <= 0:
-            raise ValueError("<name> must be greater than 0")
+            raise ValueError("{} must be greater than 0".format(name))
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/7-base_geometry.txt")

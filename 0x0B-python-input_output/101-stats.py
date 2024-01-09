@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module: Task 14. Log Parsing"""
-import sys
+from sys import stdin
 
 
 status_codes = {

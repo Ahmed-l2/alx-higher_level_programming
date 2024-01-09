@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for the 7th task"""
+"""Module for the 7th task."""
 
 import sys
 save_json = __import__('5-save_to_json_file').save_to_json_file

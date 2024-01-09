@@ -14,7 +14,7 @@ def append_after(filename="", search_string="", new_string=""):
             if line == "":
                 break
             if search_string in line:
-                new_content.append(line.strip() + '\n' + new_string)
+                new_content.append(new_string)
             else:
                 new_content.append(line)
 

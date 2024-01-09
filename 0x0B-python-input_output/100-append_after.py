@@ -9,11 +9,15 @@ def append_after(filename="", search_string="", new_string=""):
     new_content = []
 
     with open(filename, 'r', encoding='utf-8') as file:
-        for line in file:
-            if search_string in line:
-                new_content.append(line.strip() + '\n' + new_string)
-            else:
-                new_content.append(line)
+        while True:
+            line = file.readline()
+            if line == "":
+                break
+            for line in file:
+                if search_string in line:
+                    new_content.append(line.strip() + '\n' + new_string)
+                else:
+                    new_content.append(line)
 
     with open(filename, 'w', encoding='utf-8') as file:
         file.writelines(new_content)

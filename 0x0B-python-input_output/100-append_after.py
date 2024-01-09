@@ -10,6 +10,8 @@ def append_after(filename="", search_string="", new_string=""):
 
     with open(filename, 'r') as file:
         for line in file:
+            if line == "":
+                break
             if search_string in line:
                 new_content.append(line.strip() + '\n' + new_string)
             else:

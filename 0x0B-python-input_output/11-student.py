@@ -33,4 +33,3 @@ class Student:
                 self.last_name = value
             if key == "age":
                 self.age = value
-

@@ -13,10 +13,9 @@ def append_after(filename="", search_string="", new_string=""):
             line = file.readline()
             if line == "":
                 break
-            for line in file:
-                if search_string in line:
-                    new_content.append(line.strip() + '\n' + new_string)
-                else:
+            if search_string in line:
+                new_content.append(line.strip() + '\n' + new_string)
+            else:
                     new_content.append(line)
 
     with open(filename, 'w', encoding='utf-8') as file:

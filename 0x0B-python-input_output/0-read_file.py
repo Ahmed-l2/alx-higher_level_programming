@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """read_file function"""
 
+
 def read_file(filename=""):
     """Reads the content of filename with encoding UTF-8 prints it to STDOUT
 

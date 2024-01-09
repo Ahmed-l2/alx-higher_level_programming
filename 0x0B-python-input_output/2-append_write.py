@@ -2,7 +2,7 @@
 """append_file function"""
 
 
-def append_file(filename="", text=""):
+def append_write(filename="", text=""):
     """appends text to filename with encoding UTF-8
 
     Args:

@@ -16,7 +16,7 @@ def append_after(filename="", search_string="", new_string=""):
             if search_string in line:
                 new_content.append(line.strip() + '\n' + new_string)
             else:
-                    new_content.append(line)
+                new_content.append(line)
 
     with open(filename, 'w', encoding='utf-8') as file:
         file.writelines(new_content)

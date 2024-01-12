@@ -87,6 +87,26 @@ class Rectangle(Base):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
                 self.__y, self.__width, self.__height))
 
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """Helper method that updates instance attributes via *args/**kwargs"""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args):
+        """Reassigns an argument to each attribute"""
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
+
     def validate_integer(self, attr, value, eq=True):
         """Validate that the given value is an integer and satisfies optional
             equality constraint.

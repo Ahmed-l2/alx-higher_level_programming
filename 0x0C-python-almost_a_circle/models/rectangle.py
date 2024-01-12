@@ -69,6 +69,13 @@ class Rectangle(Base):
         """Returns the area of the rectangle."""
         return self.__width * self.__height
 
+    def display(self):
+        """prints in stdout the Rectangle instance with the character #"""
+        rectangle_str = ""
+        for _ in range(self.__height):
+            rectangle_str += "#" * self.__width + "\n"
+        print(rectangle_str.rstrip("\n"))
+
     def validate_integer(self, attr, value, eq=True):
         """Validate that the given value is an integer and satisfies optional
             equality constraint.

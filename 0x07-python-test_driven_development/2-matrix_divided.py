@@ -32,7 +32,7 @@ def matrix_divided(matrix, div):
     if not isinstance(matrix, list) or len(matrix) == 0:
         raise TypeError("matrix must be a matrix (list of lists) " +
                         "of integers/floats")
-    
+
     prevlistlen = len(matrix[0])
     for row in matrix:
         if not isinstance(row, list) or len(row) == 0:

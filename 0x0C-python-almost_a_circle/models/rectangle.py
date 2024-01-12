@@ -76,6 +76,13 @@ class Rectangle(Base):
             rectangle_str += "#" * self.__width + "\n"
         print(rectangle_str.rstrip("\n"))
 
+    def __str__(self):
+        """String representaion of Rectangle in the format of:
+        [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        """
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
+                self.__y, self.__width, self.__height))
+
     def validate_integer(self, attr, value, eq=True):
         """Validate that the given value is an integer and satisfies optional
             equality constraint.

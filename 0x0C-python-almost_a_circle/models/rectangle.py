@@ -122,11 +122,11 @@ class Rectangle(Base):
             ValueError: If the value is not greater than or equal to zero
             (eq=True) or greater than zero (eq=False).
         """
-        if type(value) is not int:
+        if type(value) != int:
             raise TypeError("{} must be an integer".format(attr))
         if eq and value < 0:
             raise ValueError("{} must be >= 0".format(attr))
-        elif not eq and value < 0:
+        elif not eq and value <= 0:
             raise ValueError("{} must be > 0".format(attr))
 
     def to_dictionary(self):

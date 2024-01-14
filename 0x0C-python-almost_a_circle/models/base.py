@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for the Base class"""
 import json
+import csv
 
 
 class Base:
@@ -42,16 +43,55 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Returns an instance with all attributes already set"""
+        """Returns an instance with all attributes already set."""
         dummy_instance = cls(1, 1)
         dummy_instance.update(**dictionary)
         return dummy_instance
 
     @classmethod
     def load_from_file(cls):
+        """returns a list of instances;"""
         from os import path
         file = "{}.json".format(cls.__name__)
         if not path.isfile(file):
             return []
         with open(file, 'r', encoding="utf-8") as f:
             return [cls.create(**dic) for dic in cls.from_json_string(f.read())]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save Object to CSV file"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if list_objs is not None:
+            if cls is Rectangle:
+                list_objs = [[obj.id, obj.width, obj.height, obj.x, obj.y] for
+                            obj in list_objs]
+            else:
+                list_objs = [[obj.id, obj.size, obj.x, obj.y] for
+                            obj in list_objs]
+        with open("{}.csv".format(cls.__name__), 'w', encoding="utf-8",
+                    newline='') as f:
+            writer = csv.writer(f)
+            writer.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Load object from CSV file"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        csv_string = []
+        with open("{}.csv".format(cls.__name__), 'r', encoding="utf-8",
+                    newline='') as f:
+            reader = csv.reader(f)
+            for row in reader:
+                row = [int(r) for r in row]
+                if cls is Rectangle:
+                    dct = {"id": row[0], "width": row[1], "height": row[2],
+                            "x": row[3], "y": row[4]}
+                else:
+                    dct = {"id": row[0], "size": row[1], "x": row[2],
+                            "y": row[3]}
+                csv_string.append(cls.create(**dct))
+        return csv_string

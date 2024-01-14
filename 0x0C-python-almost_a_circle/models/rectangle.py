@@ -67,25 +67,25 @@ class Rectangle(Base):
 
     def area(self):
         """Returns the area of the rectangle."""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """prints in stdout the Rectangle instance with the character #"""
         rectangle_str = ""
-        if self.__y:
-            rectangle_str += '\n' * self.__y
-        for _ in range(self.__height):
+        if self.y:
+            rectangle_str += '\n' * self.y
+        for _ in range(self.height):
             if self.__x:
-                rectangle_str += " " * self.__x
-            rectangle_str += "#" * self.__width + "\n"
+                rectangle_str += " " * self.x
+            rectangle_str += "#" * self.width + "\n"
         print(rectangle_str.rstrip("\n"))
 
     def __str__(self):
         """String representaion of Rectangle in the format of:
         [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
-                self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                self.y, self.width, self.height))
 
     def __update(self, id=None, width=None, height=None, x=None, y=None):
         """Helper method that updates instance attributes via *args/**kwargs"""
@@ -128,3 +128,11 @@ class Rectangle(Base):
             raise ValueError("{} must be >= 0".format(attr))
         elif not eq and value < 0:
             raise ValueError("{} must be > 0".format(attr))
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle."""
+        return {"id": self.id,
+                "width": self.__width,
+                "height": self.__height,
+                "x": self.__x,
+                "y": self.__y}

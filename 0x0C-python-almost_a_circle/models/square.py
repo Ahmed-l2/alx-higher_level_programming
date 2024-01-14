@@ -15,20 +15,36 @@ class Square(Rectangle):
             y: y positions of Square
             id: inherited instance attribute
         """
-        super().__init__(width=size, height=size, x=x, y=y, id=id)
-        self.__size = self.width
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
         """get the value of size"""
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
         """set the value of size"""
-        self.validate_integer("width", value, False)
-        self.__width = value
-        self.__height = value
+        self.width = value
+        self.height = value
+
+    def __update(self, id=None, size=None, x=None, y=None):
+        """Helper method that updates instance attributes via *args/**kwargs"""
+        if id is not None:
+            self.id = id
+        if size is not None:
+            self.size = size
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        """Reassigns an argument to each attribute"""
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
 
     def __str__(self):
         """String Representation of Square Class"""

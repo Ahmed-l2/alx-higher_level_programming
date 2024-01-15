@@ -20,6 +20,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """converts dictionary to json string"""
@@ -31,9 +32,9 @@ class Base:
     def save_to_file(cls, list_objs):
         """Writes Json string representation of list_objs to Json file."""
         if list_objs is not None:
-           list_objs = [obj.to_dictionary() for obj in list_objs]
-        with open("{}.json".format(cls.__name__), 'w', encoding="utf-8") as file:
-            file.write(cls.to_json_string(list_objs))
+            list_objs = [obj.to_dictionary() for obj in list_objs]
+        with open("{}.json".format(cls.__name__), 'w', encoding="utf-8") as f:
+            f.write(cls.to_json_string(list_objs))
 
     def from_json_string(json_string):
         """Returns the list of the JSON string representation json_string."""
@@ -56,7 +57,8 @@ class Base:
         if not path.isfile(file):
             return []
         with open(file, 'r', encoding="utf-8") as f:
-            return [cls.create(**dic) for dic in cls.from_json_string(f.read())]
+            return [cls.create(**dic) for dic in
+                    cls.from_json_string(f.read())]
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -65,13 +67,14 @@ class Base:
         from models.square import Square
         if list_objs is not None:
             if cls is Rectangle:
-                list_objs = [[obj.id, obj.width, obj.height, obj.x, obj.y] for
-                            obj in list_objs]
+                list_objs = [
+                            [obj.id, obj.width, obj.height, obj.x, obj.y]
+                            for obj in list_objs]
             else:
-                list_objs = [[obj.id, obj.size, obj.x, obj.y] for
-                            obj in list_objs]
-        with open("{}.csv".format(cls.__name__), 'w', encoding="utf-8",
-                    newline='') as f:
+                list_objs = [
+                        [obj.id, obj.size, obj.x, obj.y] for obj in list_objs]
+        with open('{}.csv'.format(cls.__name__), 'w', newline='',
+                  encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerows(list_objs)
 
@@ -80,18 +83,26 @@ class Base:
         """Load object from CSV file"""
         from models.rectangle import Rectangle
         from models.square import Square
-
         csv_string = []
-        with open("{}.csv".format(cls.__name__), 'r', encoding="utf-8",
-                    newline='') as f:
+        with open('{}.csv'.format(cls.__name__), 'r', newline='',
+                  encoding='uttf-8') as f:
             reader = csv.reader(f)
             for row in reader:
                 row = [int(r) for r in row]
                 if cls is Rectangle:
-                    dct = {"id": row[0], "width": row[1], "height": row[2],
-                            "x": row[3], "y": row[4]}
+                    dct = {
+                            "id": row[0],
+                            "width": row[1],
+                            "height": row[2],
+                            "x": row[3],
+                            "y": row[4]
+                            }
                 else:
-                    dct = {"id": row[0], "size": row[1], "x": row[2],
-                            "y": row[3]}
+                    dct = {
+                            "id": row[0],
+                            "size": row[1],
+                            "x": row[2],
+                            "y": row[3]
+                            }
                 csv_string.append(cls.create(**dct))
         return csv_string

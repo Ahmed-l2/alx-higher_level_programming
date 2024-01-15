@@ -116,31 +116,31 @@ class Base:
     def draw(list_rectangles, list_squares):
         """opens a window and draws all the Rectangles and Squares"""
         import turtle
+        from random import randrange
         import time
 
         turtle.Screen().colormode(255)
         turtle.bgcolor('black')
-        colors = ['red', 'dark red']
 
         for shape in list_rectangles + list_squares:
             t = turtle.Turtle()
             t.pensize(1)
             t.penup()
             t.pendown()
-            t.setpos(shape.x + t.pos()[0], shape.y - t.pos()[1])
-            t.pensize(8)
-            t.pencolor(colors[0])
+            t.setpos(randrange(-255, 256), randrange(-255, 256))
+            t.pensize(5)
+            t.pencolor((randrange(255), randrange(255), randrange(255)))
             t.forward(shape.width)
             t.left(90)
-            t.pencolor(colors[1])
+            t.pencolor((randrange(255), randrange(255), randrange(255)))
             t.forward(shape.height)
             t.left(90)
-            t.pencolor(colors[0])
+            t.pencolor((randrange(255), randrange(255), randrange(255)))
             t.forward(shape.width)
             t.left(90)
-            t.pencolor(colors[1])
+            t.pencolor((randrange(255), randrange(255), randrange(255)))
             t.forward(shape.height)
             t.left(90)
             t.end_fill()
 
-        time.sleep(6)
+        time.sleep(4)

@@ -112,3 +112,30 @@ class Base:
                             }
                 csv_string.append(cls.create(**dct))
         return csv_string
+
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all the Rectangles and Squares"""
+        import turtle
+        import time
+
+        turtle.bgcolor('black')
+        t = turtle.Turtle()
+        colors = ['red', 'dark red']
+
+        for shape in list_rectangles + list_squares:
+            t.pensize(1)
+            t.penup
+            t.pendown()
+            t.setpos(shape.x + t.pos()[0], shape.y, t.pos()[1])
+            t.pensize(7)
+            t.forward(shape.width)
+            t.left(90)
+            t.foward(shape.height)
+            t.left(90)
+            t.forward(shape.width)
+            t.left(90)
+            t.foward(shape.height)
+            t.left(90)
+            t.end_fill()
+
+        time.sleep(6)

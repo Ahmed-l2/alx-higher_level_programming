@@ -118,23 +118,28 @@ class Base:
         import turtle
         import time
 
+        turtle.Screen().colormode(255)
         turtle.bgcolor('black')
-        t = turtle.Turtle()
         colors = ['red', 'dark red']
 
         for shape in list_rectangles + list_squares:
+            t = turtle.Turtle()
             t.pensize(1)
-            t.penup
+            t.penup()
             t.pendown()
-            t.setpos(shape.x + t.pos()[0], shape.y, t.pos()[1])
-            t.pensize(7)
+            t.setpos(shape.x + t.pos()[0], shape.y - t.pos()[1])
+            t.pensize(8)
+            t.pencolor(colors[0])
             t.forward(shape.width)
             t.left(90)
-            t.foward(shape.height)
+            t.pencolor(colors[1])
+            t.forward(shape.height)
             t.left(90)
+            t.pencolor(colors[0])
             t.forward(shape.width)
             t.left(90)
-            t.foward(shape.height)
+            t.pencolor(colors[1])
+            t.forward(shape.height)
             t.left(90)
             t.end_fill()
 

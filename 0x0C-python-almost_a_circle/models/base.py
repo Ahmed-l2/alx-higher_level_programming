@@ -74,12 +74,11 @@ class Base:
         from models.square import Square
         if list_objs is not None:
             if cls is Rectangle:
-                list_objs = [
-                            [obj.id, obj.width, obj.height, obj.x, obj.y]
-                            for obj in list_objs]
+                list_objs = [[obj.id, obj.width, obj.height, obj.x, obj.y]
+                             for obj in list_objs]
             else:
-                list_objs = [
-                        [obj.id, obj.size, obj.x, obj.y] for obj in list_objs]
+                list_objs = [[obj.id, obj.size, obj.x, obj.y]
+                             for obj in list_objs]
         with open('{}.csv'.format(cls.__name__), 'w', newline='',
                   encoding='utf-8') as f:
             writer = csv.writer(f)
@@ -92,7 +91,7 @@ class Base:
         from models.square import Square
         csv_string = []
         with open('{}.csv'.format(cls.__name__), 'r', newline='',
-                  encoding='uttf-8') as f:
+                  encoding='utf-8') as f:
             reader = csv.reader(f)
             for row in reader:
                 row = [int(r) for r in row]

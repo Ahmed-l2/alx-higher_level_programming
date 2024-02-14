@@ -1,3 +1,7 @@
--- displays the average temperature (Fahrenheit) by city ordered by temperature
-select city, avg(value) as avg_temp from temperatures where month in
-(7,8) group by city order by avg_temp desc limit 3;
+-- displays the average temperature (Fahrenheit) by city ordered by temperaturef
+SELECT city, AVG(value) as avg_temp
+FROM temperatures
+WHERE month = 7 OR month = 8
+GROUP BY city
+ORDER BY avg_temp DESC
+LIMIT 3;

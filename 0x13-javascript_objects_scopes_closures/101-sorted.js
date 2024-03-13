@@ -2,11 +2,11 @@
 
 const dict1 = require('./101-data').dict;
 
-let dict2 = {};
+const dict2 = {};
 
-for (let key in dict1) {
-  let value = dict1[key];
-  if (dict2.hasOwnProperty(value)) {
+for (const key in dict1) {
+  const value = dict1[key];
+  if (Object.prototype.hasOwnProperty.call(dict2, value)) {
     dict2[value].push(key);
   } else {
     dict2[value] = [key];

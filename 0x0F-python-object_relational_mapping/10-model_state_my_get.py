@@ -21,7 +21,7 @@ if __name__ == "__main__":
     engine = create_engine(engine_url)
     session = sessionmaker(bind=engine)()
 
-    state = session.query(State).filter(name == argv[4]).first()
+    state = session.query(State).filter_by(name == argv[4]).first()
     if state:
         print(state.id)
     else:

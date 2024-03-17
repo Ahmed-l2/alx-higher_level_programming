@@ -3,7 +3,7 @@
 Defines a SQLAlchemy ORM model for representing cities
 """
 
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()

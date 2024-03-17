@@ -20,8 +20,7 @@ if __name__ == "__main__":
     session = sessionmaker(bind=engine)()
 
     state = session.query(State).first()
-
-    state_id = state.id
-    state_name = state.name
-
-    print(f"{state_id}: {state_name}")
+    if (state):
+        print("{}: {}".format(state.id, state.name))
+    else:
+        print("Nothing")

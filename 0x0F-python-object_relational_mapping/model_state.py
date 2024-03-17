@@ -10,6 +10,8 @@ Base = declarative_base()
 
 
 class State(Base):
+    """Connects to states table"""
+
     __tablename__ = "states"
 
     id = Column(Integer, primary_key=True, autoincrement=True,

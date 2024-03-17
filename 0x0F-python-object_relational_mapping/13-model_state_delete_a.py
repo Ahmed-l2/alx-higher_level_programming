@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     session = sessionmaker(bind=engine)()
 
-    for state session.query(State):
+    for state in session.query(State):
         if 'a' in state.name:
             session.delete(state)
 

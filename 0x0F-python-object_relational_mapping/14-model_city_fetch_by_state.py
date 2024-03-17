@@ -18,9 +18,9 @@ if __name__ == "__main__":
     engine = create_engine(engine_url)
 
     session = sessionmaker(bind=engine)()
-    
+
     cities = session.query(State, City).filter(City.state_id == State.id)\
-            .order_by(City.id).all()
+        .order_by(City.id).all()
 
     for city, state in cities:
         print("{state.name}: ({city.id}) {city.name}")

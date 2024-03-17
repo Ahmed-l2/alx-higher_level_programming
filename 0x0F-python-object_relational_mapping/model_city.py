@@ -10,7 +10,7 @@ Base = declarative_base()
 
 
 class City(Base):
-    """Connects to cities table"""
+    """maps cities table"""
 
     __tablename__ = "cities"
 

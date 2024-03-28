@@ -10,10 +10,10 @@ def fetch():
         html = response.read()
         d = html.decode('utf-8')
 
-    print("Body response:$")
-    print("    - type: {}$".format(type(html)))
-    print("    - content: {}$".format(html))
-    print("    - utf8 content: {}$".format(d))
+    print("Body response:")
+    print("    - type: {}".format(type(html)))
+    print("    - content: {}".format(html))
+    print("    - utf8 content: {}".format(d))
 
 
 if __name__ == "__main__":

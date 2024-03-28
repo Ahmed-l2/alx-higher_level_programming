@@ -1,17 +1,19 @@
 #!/usr/bin/python3
 """fetches https://alx-intranet.hbtn.io/status"""
-import requests
+import urllib.request
 
 
 def fetch():
     """Fetches given url"""
     url = "https://alx-intranet.hbtn.io/status"
-    response = requests.get(url)
+    with urllib.request.urlopen(url) as response:
+        html = response.read()
+        d = html.decode('utf-8')
 
     print("Body response:")
-    print("\t- type: {}".format(type(response.text)))
-    print("\t- content: {}".format(response.text))
-
+    print("\t- type: {}".format(type(html)))
+    print("\t- content: {}".format(html))
+    print("\t- content: {}".format(d))
 
 if __name__ == "__main__":
     fetch()

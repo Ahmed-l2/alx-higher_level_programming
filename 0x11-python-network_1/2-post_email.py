@@ -13,9 +13,10 @@ def fetch():
     data = urllib.parse.urlencode(email).encode()
 
     request = urllib.request.Request(url, data=data)
-    response = urllib.request.urlopen(request)
+    with urllib.request.urlopen(request) as response:
+        body = response.read().decode('utf-8')
 
-    print(response.read().decode())
+    print(body)
 
 
 if __name__ == "__main__":

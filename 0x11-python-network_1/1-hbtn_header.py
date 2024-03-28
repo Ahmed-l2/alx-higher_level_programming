@@ -3,6 +3,7 @@
 import urllib.request
 from sys import argv
 
+
 def fetch():
     """Fetches X-Request-Id variable"""
     url = argv[1]

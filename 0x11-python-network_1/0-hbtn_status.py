@@ -15,5 +15,6 @@ def fetch():
     print("\t- content: {}".format(html))
     print("\t- content: {}".format(d))
 
+
 if __name__ == "__main__":
     fetch()

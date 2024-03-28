@@ -2,6 +2,7 @@
 """fetches https://alx-intranet.hbtn.io/status"""
 import urllib.request
 
+
 def fetch():
     """Fetches given url"""
     url = "https://alx-intranet.hbtn.io/status"
@@ -13,6 +14,7 @@ def fetch():
     print("    - type: {}$".format(type(html)))
     print("    - content: {}$".format(html))
     print("    - utf8 content: {}$".format(d))
+
 
 if __name__ == "__main__":
     fetch()

@@ -3,6 +3,7 @@
 import urllib.request
 
 def fetch():
+    """Fetches given url"""
     url = "https://alx-intranet.hbtn.io/status"
     with urllib.request.urlopen(url) as response:
         html = response.read()

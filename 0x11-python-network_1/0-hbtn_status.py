@@ -10,7 +10,6 @@ def fetch():
         html = response.read()
         d = html.decode('utf-8')
 
-
     print("Body response:")
     print("\t- type: {}".format(type(html)))
     print("\t- content: {}".format(html))

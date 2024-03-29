@@ -8,7 +8,7 @@ from requests.auth import HTTPBasicAuth
 def gitHubCred():
     """GitHub credentials and uses the GitHub API to display your id"""
     credauth = HTTPBasicAuth(argv[1], argv[2])
-    response = requests.get("https://api.github.com/user", auth=auth)
+    response = requests.get("https://api.github.com/user", auth=credauth)
     d = response.json()
     print(d.get("id"))
 

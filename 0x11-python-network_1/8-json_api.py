@@ -19,7 +19,7 @@ def fetch():
             print("No result")
         else:
             print("[{}] {}".format(d.get("id"), d.get("name")))
-    except KeyError:
+    except ValueError:
         print("Not a valid JSON")
 
 

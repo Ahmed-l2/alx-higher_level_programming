@@ -12,7 +12,8 @@ def fetch():
         response.raise_for_status()
         print(response.text)
     except requests.HTTPError as err:
-        print(f"Error code: {err.response.status_code}")
+        if err.response.status_code >= 400:
+            print(f"Error code: {err.response.status_code}")
 
 
 if __name__ == "__main__":

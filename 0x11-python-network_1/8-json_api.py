@@ -13,14 +13,14 @@ def fetch():
 
     response = requests.post(url, data=data)
 
-    d = response.json()
-    if not d:
-        print("No result")
-    else:
-        try:
-            print("[{}] {}".format(d['id'], d['name']))
-        except KeyError:
-            print("Not a valid JSON")
+    try:
+        d = response.json()
+        if not d:
+            print("No result")
+        else:
+            print("[{}] {}".format(response.get("id"), response.get("name")))
+    except KeyError:
+        print("Not a valid JSON")
 
 
 if __name__ == "__main__":

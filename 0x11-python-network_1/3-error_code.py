@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""fetches https://alx-intranet.hbtn.io"""
+"""fetches URL"""
 import urllib.request
 from sys import argv
 
 
 def fetch():
-    """Fetches X-Request-Id variable"""
+    """Fetches body of reponse"""
     url = argv[1]
 
     request = urllib.request.Request(url)

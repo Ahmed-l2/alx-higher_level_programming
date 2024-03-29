@@ -6,10 +6,10 @@ from sys import argv
 
 def fetch():
     url = "http://0.0.0.0:5000/search_user"
-    if len(argv) > 1:
-        data = {'q': argv[1]}
-    else:
+    if len(argv) == 1:
         data = {'q': ""}
+    else:
+        data = {'q': argv[1]}
 
     response = requests.post(url, data=data)
 

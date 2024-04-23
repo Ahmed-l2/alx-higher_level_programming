@@ -10,13 +10,9 @@ request(apiUrl, function (error, response, body) {
     return console.log(error);
   }
 
-  const films = JSON.parse(body).results;
-
-  let count = 0;
-  for (const film of films) {
-    if (film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) {
-      count++;
+  fs.writeFile(filename, body, 'utf-8', function (error) {
+    if (error) {
+      return console.log(error);
     }
-  }
-  fs.writeRead()
+  });
 });
